@@ -2,11 +2,20 @@
   "name": "qnape.com",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://qnape.com",
+  "author": {
+    "name": "Mayank Kumar",
+    "email": "mayank.hzb1999@gmail.com",
+    "url": "https://www.linkedin.com/in/mayank-qnape/"
+  },
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "npm-run-all --parallel dev:* ",
+    "dev:run": "next dev --turbopack",
+    "dev:open": "npx open-cli http://localhost:4000",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "npm-intall": "npm i --f"
   },
   "dependencies": {
     "react": "19.0.0-rc-66855b96-20241106",
