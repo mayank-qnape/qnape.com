@@ -1,4 +1,5 @@
 import { R } from '@/constants/R'
+import { Metadata } from 'next'
 
 export const onImageError = (e: Event, imgUrl: string) => {
     const target = e.target as HTMLImageElement
@@ -20,5 +21,14 @@ export const showConsole = <T>(type: 'log' | 'error' | 'warn', tag: string, payl
             default:
                 console.warn(`Unknown log type: [${type}]`)
         }
+    }
+}
+
+export const seoHanlder = {
+    generateMetadata: function (slug: string): Metadata {
+        return {
+            title: `${slug} - ${R.title.siteTitle}`,
+            description: `Post: ${slug} ${R.title.siteDescription}`,
+        };
     }
 }
